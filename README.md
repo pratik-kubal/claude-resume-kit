@@ -238,15 +238,16 @@ The system enforces accuracy through provenance tracking in `config.md`. Every a
 
 ### The Critique System
 
-The `/critique` skill runs an 8-part assessment:
+The `/critique` skill runs a 9-part assessment:
 1. **Domain-Specialist Lens** — reviewer persona, gap analysis, competitive landscape
 2. **Five-Perspective Read-Through** — ATS bot, recruiter (10s), HR (30s), hiring manager (2min), technical reviewer (10min)
 3. **Eight-Dimension Scoring** — weighted score out of 100
 4. **Interview Likelihood** — per-reader probability estimates
 5. **Tiered Improvements** — ranked by point impact
 6. **Interview Bridge Points** — resume-to-interview talking points
-7. **Cover Letter Critique** — 6 sub-checks
-8. **Post-Generation Verification** — mechanical and content checklists
+7. **AI Fingerprint Scan** — banned words, em-dash count, `-ing` endings, 12-item checklist
+8. **Cover Letter Critique** — 6 sub-checks
+9. **Post-Generation Verification** — mechanical and content checklists
 
 ---
 
