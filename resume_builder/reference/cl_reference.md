@@ -82,6 +82,18 @@
 
 ---
 
+## CL Hook Verification (MANDATORY)
+
+Before presenting any CL draft to the user, web-search and verify every external reference:
+- **Academic:** PI name + cited paper title/topic → confirm paper exists, journal, year
+- **National Lab:** Named program, thrust area, or group publication → confirm it exists
+- **Industry:** Product name, technology claim, or company news → confirm accuracy
+
+**If verified:** Note source URL in session file Cover Letter Plan.
+**If unverified:** Flag as **"UNVERIFIED — please confirm"** in the draft. Never guess names, titles, or journal details.
+
+---
+
 ## CL Anti-Patterns
 
 - No generic opener ("I am writing to express my interest...")

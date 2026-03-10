@@ -88,6 +88,20 @@ Save to `output/<FolderName>/e2e_<name>_cover_letter.tex`
 
 Progress: "Writing [institution type] cover letter — [N] paragraphs, targeting [N] words..."
 
+### CL Hook Verification Gate (MANDATORY before presenting to user)
+
+Web-search every hook used in the CL:
+- Academic: PI name + cited paper/research area
+- National Lab: named program, thrust area, or group publication
+- Industry: product, technology, or company news referenced
+
+Present evidence as:
+> **Claim:** [what the CL says] → **Evidence:** [what the search found] → **Source:** [URL]
+
+Flag any unverified item: **"UNVERIFIED — please confirm"**
+
+Do NOT present the CL draft to the user until all hooks are verified or flagged.
+
 ---
 
 ## Phase 3: Compile & Verify

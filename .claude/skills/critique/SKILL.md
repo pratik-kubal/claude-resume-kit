@@ -75,6 +75,7 @@ Find and read the session file for the .tex being critiqued (use derivation prot
    Use the Read tool to view the compiled PDF — check orphans, page fill, header wrapping.
    If compile fails: note "COMPILE FAILED — visual checks could not be verified" in Part 8.
 8. If a prior critique exists (`output/<FolderName>/critique_<name>.md`): read it and note previous score.
+8b. **Paper Hook Verification:** If the CL cites named papers, PIs, programs, or publications, web-search to verify title, journal, year, and PI affiliation. Flag factual errors as Tier 1 fixes.
 
 9. **Run the full critique per critique_framework.md. The output MUST contain ALL 8 sections** (even if the framework file has partially compacted, produce every section):
 
