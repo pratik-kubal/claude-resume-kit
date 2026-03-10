@@ -10,7 +10,7 @@ Detailed reference for claude-resume-kit. For the quick overview, see [README.md
 claude-resume-kit/
 ├── CLAUDE.md                          # Auto-loaded project instructions
 ├── config.md                          # Your personal configuration
-├── .claude/skills/                    # 6 slash commands
+├── .claude/skills/                    # 6 skills (invoked as /skill-name)
 │   ├── setup-extract/SKILL.md         # Extract from papers → structured data
 │   ├── setup-build-kb/SKILL.md        # Synthesize KB from extractions
 │   ├── make-resume/SKILL.md           # JD → tailored resume/CV (.tex)
