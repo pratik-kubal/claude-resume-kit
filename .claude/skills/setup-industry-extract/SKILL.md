@@ -25,14 +25,7 @@ Parse `$ARGUMENTS`:
 
 ---
 
-# Process
-
-1. Process each resume through Phases 1-4 sequentially
-2. Ask Phase 2 clarifying questions for ALL papers at once (grouped) before writing any extractions
-3. After all extractions: present combined inventory update and summary
-4. Single STOP at the end (not per paper)
-
-## Phase 1: Read & Understand the Resume
+## Phase 1: Read & Understand all the Resumes
 
 1. List all PDF files in folder given in the argument. Use the Read tool (supports PDF reading)
 2. **While reading, for each do collect:**
@@ -77,45 +70,31 @@ Create the extraction file at `knowledge_base/extractions/resume_context.md`
 
 ```markdown
 
-## Required Sections (in order)
+## Sections (in order)
 
-- Purpose note
-- Professional Summary / Positioning (core value prop; role positioning table by resume type)
+- Professional Summary
+- Positioning core value prop; role positioning table by resume type in format:
+| Resume Type / Target Role | Key Angle |
+|---|---|
 - Work Experience (full details per role: company, title, location, dates, ALL bullet points with averaged metrics noted)
 - Education (degrees, institutions, dates, GPA, relevant coursework, capstone projects)
 - Publications
-- Skills (organized by: Programming Languages, Frameworks & Libraries, Cloud & Infrastructure, Databases, DevOps & CI/CD, Observability & Monitoring, Security, Testing, Messaging & Streaming, AI/ML, Methodologies & Practices, Tools)
+- Tools (organized by: Programming Languages, Frameworks & Libraries, Cloud & Infrastructure, Databases, DevOps & CI/CD, Observability & Monitoring, Security, Testing, Messaging & Streaming, AI/ML)
+- Methodologies & Practices
 - Projects (all projects with full bullet point details)
-- Volunteer Experience
+- Volunteer Experience (all experience with full bullet point details)
 - Role Types Targeted (list all roles from resume files)
 - Key Themes & Strengths (top recurring themes with explanations)
-- Metrics & Quantified Achievements (consolidated table with averaged numbers)
 - Preferred Industries / Domains
 - Job Matching Notes (keywords by category, seniority signal, soft skill differentiators, geographic/logistics notes)
-
-## Key Results
-[Number each result. Include quantitative metrics wherever possible.]
-1. [Result with numbers — e.g., "Achieved 5,000x speedup over brute-force screening"]
-2. [Result — e.g., "Screened 8,500 variants, identified 7 top candidates"]
-3. [...]
-
-## Novelty Claims
-[What's genuinely new — be precise, avoid overclaiming]
-- [e.g., "First application of framework X to system Y"]
-- [e.g., "New method combining A and B — no prior work exists"]
-
-## Collaboration & Scope
-- **Other groups:** [institutions, PIs involved]
-- **User's specific contribution:** [from Phase 2 clarification]
-- **Shared vs. sole work:** [what the user did alone vs. with others]
-
-## Provenance Notes
-- **Publication status:** [matches config.md if listed there]
-- **Safe to claim:** [what the user can put on a resume without hedging]
-- **Needs hedging:** [claims that require "contributed to" or "supported" framing]
-- **Do NOT claim:** [results from collaborators, claims that would be overclaiming]
+- Metrics & Quantified Achievements (consolidated table with averaged numbers)
+    [Number each result. Include quantitative metrics wherever possible.]
+    1. [Result with numbers — e.g., "Achieved 5,000x speedup over brute-force screening"]
+    2. [Result — e.g., "Screened 8,500 variants, identified 7 top candidates"]
+    3. [...]
 
 ## Resume Bullet Seeds
+Applied to all the bullets in all the sections
 [3-5 draft bullets in STAR format. These are seeds, not final text.]
 [Use full-ownership verbs only for sole-contributor work. Hedge for shared work.]
 1. [Action verb] + [what was done] + [quantitative result/impact]
@@ -123,6 +102,11 @@ Create the extraction file at `knowledge_base/extractions/resume_context.md`
 3. [Action verb] + [scope — e.g., "across N systems"] + [outcome]
 4. [Optional: collaboration-framed bullet]
 5. [Optional: tool/infrastructure bullet]
+
+## Novelty Claims
+[What's genuinely new — be precise, avoid overclaiming]
+- [e.g., "First application of framework X to system Y"]
+- [e.g., "New method combining A and B — no prior work exists"]
 ```
 
 Save the file. Show the user the complete extraction.
@@ -131,29 +115,14 @@ Progress: "Writing extraction for [short title]... [N] results identified, [M] b
 
 ---
 
-## Phase 4: Update Inventory
-
-Read and update `knowledge_base/extractions/_INVENTORY.md`.
-
-Add a row to the inventory table:
-
-```
-| [filename] | [short title] | [user's role] | [status] | [primary methods] | [date extracted] |
-```
-
-Present the updated inventory entry to the user.
-
----
-
-## Phase 5: Next Steps
+## Phase 4: Next Steps
 
 After extraction is complete, present:
 
-1. **Extraction summary:** [N] methods, [M] quantitative results, [K] bullet seeds
+1. **Extraction summary:**
 2. **Provenance flags:** Any items that need special handling
 3. **Suggested next action:**
-   - If more papers to extract: "Run `/setup-extract [next paper path]`"
-   - If all papers done: "Run `/setup-build-kb` to synthesize extractions into experience files and bundles"
+    - If all resume folder done: "Run `/setup-industry-kb` to synthesize extractions into experience files and bundles"
 
 ### >>>>>> MANDATORY STOP <<<<<<
 Present extraction summary. Wait for user feedback or next paper.
