@@ -7,7 +7,7 @@ description: Extract structured information from tailored resumes, PDFs, or code
 **User input:** `$ARGUMENTS`
 
 Parse `$ARGUMENTS`:
-- Folder path to tailored resumes (e.g., `industry/tailored_resumes/Smith2024_catalyst.pdf`, `industry/tailored_resumes/project_report.tex`) → read that file
+- Folder path to tailored resumes (e.g., `industry/Smith2024_catalyst.pdf`, `industry/project_report.tex`) → read that file
 - Empty → ask the user for the resume folder or paste content
 
 ---
@@ -16,12 +16,10 @@ Parse `$ARGUMENTS`:
 
 1. Read `CLAUDE.md` — check KB Corrections Log for known issues
 2. Read `config.md` — load Personal Info (to identify user's author position), Provenance Flags
-3. Read `knowledge_base/extractions/_INVENTORY.md` — see what's already extracted, avoid duplicates
+3. Read `knowledge_base/extractions/_INVENTORY_INDUSTRY.md` — see what's already extracted, avoid duplicates
 
-<!-- If the job description is already in the inventory:
-- Show the existing extraction path
-- Ask: "This job is already extracted. Re-extract (overwrite) or skip?"
-- Wait for user response before proceeding -->
+If any filename (Resume) is already in the inventory:
+- Skip the file and tell the user that [filename] is already extracted
 
 ---
 
@@ -60,15 +58,25 @@ Ask the clarifying questions for ALL papers at once (grouped).
 
 ## Phase 3: Write Extraction
 
-Create the extraction file at `knowledge_base/extractions/resume_context.md`
+Create the extraction file at `knowledge_base/extractions/resume_context_<date>.md`
 
-**Naming convention:** `resume_context.md`
-- Examples: `resume_context.md`
-- Overrite if file already present
+**Naming convention:** `resume_context_<date>.md`
+- Examples: `resume_context_march_16_2026.md`
+- Normalize to lowercase with underscores
 
 **Extraction format:**
 
 ```markdown
+
+## Resume Bullet Seeds
+Applied to all the bullets in all the sections below
+[3-5 draft bullets in STAR format. These are seeds, not final text.]
+[Use full-ownership verbs only for sole-contributor work. Hedge for shared work.]
+1. [Action verb] + [what was done] + [quantitative result/impact]
+2. [Action verb] + [method/tool developed] + [what it enabled]
+3. [Action verb] + [scope — e.g., "across N systems"] + [outcome]
+4. [Optional: collaboration-framed bullet]
+5. [Optional: tool/infrastructure bullet]
 
 ## Sections (in order)
 
@@ -93,16 +101,6 @@ Create the extraction file at `knowledge_base/extractions/resume_context.md`
     2. [Result — e.g., "Screened 8,500 variants, identified 7 top candidates"]
     3. [...]
 
-## Resume Bullet Seeds
-Applied to all the bullets in all the sections
-[3-5 draft bullets in STAR format. These are seeds, not final text.]
-[Use full-ownership verbs only for sole-contributor work. Hedge for shared work.]
-1. [Action verb] + [what was done] + [quantitative result/impact]
-2. [Action verb] + [method/tool developed] + [what it enabled]
-3. [Action verb] + [scope — e.g., "across N systems"] + [outcome]
-4. [Optional: collaboration-framed bullet]
-5. [Optional: tool/infrastructure bullet]
-
 ## Novelty Claims
 [What's genuinely new — be precise, avoid overclaiming]
 - [e.g., "First application of framework X to system Y"]
@@ -115,7 +113,21 @@ Progress: "Writing extraction for [short title]... [N] results identified, [M] b
 
 ---
 
-## Phase 4: Next Steps
+## Phase 4: Update Inventory
+
+Read and update `knowledge_base/extractions/_INVENTORY_INDUSTRY.md`.
+
+Append rows to the inventory table listing all the files (resumes) extracted:
+
+```
+| [filename] | [short title] | [date extracted] |
+```
+
+Present the updated inventory entry to the user.
+
+---
+
+## Phase 5: Next Steps
 
 After extraction is complete, present:
 
