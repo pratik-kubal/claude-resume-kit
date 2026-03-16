@@ -35,6 +35,5 @@ __pycache__/
 
 # Industry
 knowledge_base/industry/*.pdf
-!knowledge_base/industry/
 knowledge_base/extractions/*.md
 !knowledge_base/extractions/_INVENTORY_INDUSTRY.md
