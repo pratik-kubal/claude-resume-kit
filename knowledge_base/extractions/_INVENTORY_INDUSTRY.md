@@ -10,8 +10,12 @@
 
 ## Extractions
 
-| # | filename | [short title] | [date extracted] |
-|---|------|-------------|----------|-------------|--------|
-| _1_ | _example.md_ | _Example title_ | _published_ |
+| #   | Filename                                                    | Short Title                                              | Date Extracted |
+| --- | ----------------------------------------------------------- | -------------------------------------------------------- | -------------- |
+| 1   | Pratik Kubal Resume - Backend Software Engineer.pdf         | Backend SWE — API perf, migrations, observability        | 2026-03-16     |
+| 2   | Pratik Kubal Resume - Docker.pdf                            | Backend SWE (Docker/simpler variant)                     | 2026-03-16     |
+| 3   | Pratik Kubal Resume - Developer - Mode 2 - Randstad USA.pdf | Contract Developer — incident mgmt, SLA, ops             | 2026-03-16     |
+| 4   | Pratik Kubal Resume - Cloud Platform Engineer.pdf           | Cloud Platform — IaC, API Gateway/WAF, Python automation | 2026-03-16     |
+| 5   | Pratik Kubal Resume - AI First Software Engineer.pdf        | AI-First SWE — RAG, Copilot, Prometheus/Grafana          | 2026-03-16     |
 
-_Delete example row and add your own as you extract papers._
+**Extraction file:** `resume_context_march_16_2026.md`

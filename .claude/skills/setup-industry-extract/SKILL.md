@@ -68,16 +68,6 @@ Create the extraction file at `knowledge_base/extractions/resume_context_<date>.
 
 ```markdown
 
-## Resume Bullet Seeds
-Applied to all the bullets in all the sections below
-[3-5 draft bullets in STAR format. These are seeds, not final text.]
-[Use full-ownership verbs only for sole-contributor work. Hedge for shared work.]
-1. [Action verb] + [what was done] + [quantitative result/impact]
-2. [Action verb] + [method/tool developed] + [what it enabled]
-3. [Action verb] + [scope — e.g., "across N systems"] + [outcome]
-4. [Optional: collaboration-framed bullet]
-5. [Optional: tool/infrastructure bullet]
-
 ## Sections (in order)
 
 - Professional Summary
@@ -85,11 +75,23 @@ Applied to all the bullets in all the sections below
 | Resume Type / Target Role | Key Angle |
 |---|---|
 - Work Experience (full details per role: company, title, location, dates, ALL bullet points with averaged metrics noted)
+    If the format of the bullet is not one of these, convert into one of the format below:
+    - [Action verb] + [what was done] + [quantitative result/impact]
+    - [Action verb] + [method/tool developed] + [what it enabled]
+    - [Action verb] + [scope — e.g., "across N systems"] + [outcome]
+    - [Optional: collaboration-framed bullet]
+    - [Optional: tool/infrastructure bullet]
 - Education (degrees, institutions, dates, GPA, relevant coursework, capstone projects)
 - Publications
 - Tools (organized by: Programming Languages, Frameworks & Libraries, Cloud & Infrastructure, Databases, DevOps & CI/CD, Observability & Monitoring, Security, Testing, Messaging & Streaming, AI/ML)
 - Methodologies & Practices
 - Projects (all projects with full bullet point details)
+    If the format of the bullet is not one of these, convert into one of the format below:
+    - [Action verb] + [what was done] + [quantitative result/impact]
+    - [Action verb] + [method/tool developed] + [what it enabled]
+    - [Action verb] + [scope — e.g., "across N systems"] + [outcome]
+    - [Optional: collaboration-framed bullet]
+    - [Optional: tool/infrastructure bullet]
 - Volunteer Experience (all experience with full bullet point details)
 - Role Types Targeted (list all roles from resume files)
 - Key Themes & Strengths (top recurring themes with explanations)
