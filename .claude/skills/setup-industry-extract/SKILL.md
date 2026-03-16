@@ -1,0 +1,162 @@
+---
+description: Extract structured information from tailored resumes, PDFs, or code into knowledge base extractions
+---
+
+# /setup-extract
+
+**User input:** `$ARGUMENTS`
+
+Parse `$ARGUMENTS`:
+- Folder path to tailored resumes (e.g., `industry/tailored_resumes/Smith2024_catalyst.pdf`, `industry/tailored_resumes/project_report.tex`) → read that file
+- Empty → ask the user for the resume folder or paste content
+
+---
+
+## Startup
+
+1. Read `CLAUDE.md` — check KB Corrections Log for known issues
+2. Read `config.md` — load Personal Info (to identify user's author position), Provenance Flags
+3. Read `knowledge_base/extractions/_INVENTORY.md` — see what's already extracted, avoid duplicates
+
+<!-- If the job description is already in the inventory:
+- Show the existing extraction path
+- Ask: "This job is already extracted. Re-extract (overwrite) or skip?"
+- Wait for user response before proceeding -->
+
+---
+
+# Process
+
+1. Process each resume through Phases 1-4 sequentially
+2. Ask Phase 2 clarifying questions for ALL papers at once (grouped) before writing any extractions
+3. After all extractions: present combined inventory update and summary
+4. Single STOP at the end (not per paper)
+
+## Phase 1: Read & Understand the Resume
+
+1. List all PDF files in folder given in the argument. Use the Read tool (supports PDF reading)
+2. **While reading, for each do collect:**
+    1. Skills (organized by: Programming Languages, Frameworks & Libraries, Cloud & Infrastructure, Databases, DevOps & CI/CD, Observability & Monitoring, Security, Testing, Messaging & Streaming, AI/ML, Methodologies & Practices, Tools)
+    2. Projects (all projects with full bullet point details)
+    3. Volunteer Experiences
+    4. Role Types Targeted (Would be found at the top of the resume file)
+    5. Key Themes & Strengths (top recurring themes with explanations)
+    6. Metrics & Quantified Achievements (consolidated table with averaged numbers)
+    7. Preferred Industries / Domains
+    8. Job Matching Notes (keywords by category, seniority signal, soft skill differentiators, geographic/logistics notes)
+3. Move to the next step when all of the files have been read
+Progress: "Reading resume... [Tailored Job Title]"
+
+---
+
+## Phase 2: Clarify Each Tailored Resume
+
+**Questions to ask (skip any that are already clear from the resume):**
+1. "What Job Title is this resume tailored for?" (e.g., Software Engineer III)
+2. "What was your specific contribution at [Company]? (e.g., What did you do at Abc Corp)"
+3. "Did you develop any tools, methods, or code at this [Company] [Position]?"
+4. "Any quantitative results you can personally claim? (e.g., 'I ran all the simulations')"
+5. "Is there anything in this [file name] that should NOT appear on your knowledge base? (e.g., Specific Technologies you're not confident about)"
+
+### >>>>>> MANDATORY STOP — DO NOT PROCEED <<<<<<
+Present your understanding of each tailored in few sentences resume one by one. 
+Ask the clarifying questions for ALL papers at once (grouped).
+**You MUST wait for the user's explicit text response before continuing to the next resume.**
+
+---
+
+## Phase 3: Write Extraction
+
+Create the extraction file at `knowledge_base/extractions/resume_context.md`
+
+**Naming convention:** `resume_context.md`
+- Examples: `resume_context.md`
+- Overrite if file already present
+
+**Extraction format:**
+
+```markdown
+
+## Required Sections (in order)
+
+- Purpose note
+- Professional Summary / Positioning (core value prop; role positioning table by resume type)
+- Work Experience (full details per role: company, title, location, dates, ALL bullet points with averaged metrics noted)
+- Education (degrees, institutions, dates, GPA, relevant coursework, capstone projects)
+- Publications
+- Skills (organized by: Programming Languages, Frameworks & Libraries, Cloud & Infrastructure, Databases, DevOps & CI/CD, Observability & Monitoring, Security, Testing, Messaging & Streaming, AI/ML, Methodologies & Practices, Tools)
+- Projects (all projects with full bullet point details)
+- Volunteer Experience
+- Role Types Targeted (list all roles from resume files)
+- Key Themes & Strengths (top recurring themes with explanations)
+- Metrics & Quantified Achievements (consolidated table with averaged numbers)
+- Preferred Industries / Domains
+- Job Matching Notes (keywords by category, seniority signal, soft skill differentiators, geographic/logistics notes)
+
+## Key Results
+[Number each result. Include quantitative metrics wherever possible.]
+1. [Result with numbers — e.g., "Achieved 5,000x speedup over brute-force screening"]
+2. [Result — e.g., "Screened 8,500 variants, identified 7 top candidates"]
+3. [...]
+
+## Novelty Claims
+[What's genuinely new — be precise, avoid overclaiming]
+- [e.g., "First application of framework X to system Y"]
+- [e.g., "New method combining A and B — no prior work exists"]
+
+## Collaboration & Scope
+- **Other groups:** [institutions, PIs involved]
+- **User's specific contribution:** [from Phase 2 clarification]
+- **Shared vs. sole work:** [what the user did alone vs. with others]
+
+## Provenance Notes
+- **Publication status:** [matches config.md if listed there]
+- **Safe to claim:** [what the user can put on a resume without hedging]
+- **Needs hedging:** [claims that require "contributed to" or "supported" framing]
+- **Do NOT claim:** [results from collaborators, claims that would be overclaiming]
+
+## Resume Bullet Seeds
+[3-5 draft bullets in STAR format. These are seeds, not final text.]
+[Use full-ownership verbs only for sole-contributor work. Hedge for shared work.]
+1. [Action verb] + [what was done] + [quantitative result/impact]
+2. [Action verb] + [method/tool developed] + [what it enabled]
+3. [Action verb] + [scope — e.g., "across N systems"] + [outcome]
+4. [Optional: collaboration-framed bullet]
+5. [Optional: tool/infrastructure bullet]
+```
+
+Save the file. Show the user the complete extraction.
+
+Progress: "Writing extraction for [short title]... [N] results identified, [M] bullet seeds drafted"
+
+---
+
+## Phase 4: Update Inventory
+
+Read and update `knowledge_base/extractions/_INVENTORY.md`.
+
+Add a row to the inventory table:
+
+```
+| [filename] | [short title] | [user's role] | [status] | [primary methods] | [date extracted] |
+```
+
+Present the updated inventory entry to the user.
+
+---
+
+## Phase 5: Next Steps
+
+After extraction is complete, present:
+
+1. **Extraction summary:** [N] methods, [M] quantitative results, [K] bullet seeds
+2. **Provenance flags:** Any items that need special handling
+3. **Suggested next action:**
+   - If more papers to extract: "Run `/setup-extract [next paper path]`"
+   - If all papers done: "Run `/setup-build-kb` to synthesize extractions into experience files and bundles"
+
+### >>>>>> MANDATORY STOP <<<<<<
+Present extraction summary. Wait for user feedback or next paper.
+**You MUST wait for the user's explicit text response before continuing.**
+
+---

@@ -4,6 +4,8 @@
 
 ---
 
+## **Profile Type (Industry or Researcher):** [Industry / Researcher]
+
 ## Personal Info
 
 - **Name:** [Your Full Name]
@@ -11,7 +13,11 @@
 - **Email:** [your@email.com]
 - **Phone:** [+1 XXXXXXXXXX]
 - **Location:** [City, State ZIP]
+- **Work Type:**: [Hybrid, Remote]
 - **LinkedIn:** [URL or leave blank]
+- **Github:** [URL or leave blank]
+- **Portfolio:** [URL or leave blank]
+- **Years of Experience:** [For Industry Type Profile]
 - **Google Scholar:** [URL or leave blank]
 - **ORCID:** [URL or leave blank]
 - **Website:** [URL or leave blank]
@@ -21,7 +27,7 @@
 ## Document Preferences
 
 - **Resume pages:** 2
-- **CV pages:** 5
+- **CV pages:** 5 (0 for Industry Type Profile)
 - **Resume bullet variant:** 2L (all variable bullets are 2-line)
 - **CV bullet variant:** 2L/3L mix
 - **Skills config (resume):** 4-3-2-2-2 (13 lines, 5 groups)
@@ -30,7 +36,7 @@
 
 ---
 
-## Provenance Flags
+## Provenance Flags (Not used for Industry Type)
 
 Track the publication status of your work. Skills check this table before every output.
 
@@ -53,7 +59,7 @@ Verified errors to never re-introduce. Add entries as you catch mistakes.
 
 ---
 
-## Role Types
+## Role Types (Not used for Industry Type)
 
 Define the role types you're targeting. Each gets a bundle during setup.
 
@@ -66,7 +72,7 @@ Define the role types you're targeting. Each gets a bundle during setup.
 
 ---
 
-## Role-Type Decision Tree
+## Role-Type Decision Tree (Not used for Industry Type)
 
 Customize this to map JD keywords to your role types.
 
