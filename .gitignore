@@ -41,3 +41,6 @@ resume_builder/bundles/*.md
 resume_builder/experience/*.md
 resume_builder/support/*.md
 !resume_builder/support/ai_fingerprint_rules.md
+JDs/**
+!JDs/example_jd.txt
+output/**
