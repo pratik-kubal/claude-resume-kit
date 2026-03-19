@@ -10,10 +10,3 @@
 
 ## Extractions
 
-| Filename                                                    | Short Title                            | Date Extracted |
-| ----------------------------------------------------------- | -------------------------------------- | -------------- |
-| Pratik Kubal Resume - AI First Software Engineer.pdf        | AI First Software Engineer             | 2026-03-17     |
-| Pratik Kubal Resume - Backend Software Engineer.pdf         | Backend Software Engineer              | 2026-03-17     |
-| Pratik Kubal Resume - Cloud Platform Engineer.pdf           | Cloud Platform Engineer                | 2026-03-17     |
-| Pratik Kubal Resume - Developer - Mode 2 - Randstad USA.pdf | Developer - Mode 2 (Contract/Staffing) | 2026-03-17     |
-| Pratik Kubal Resume - Docker.pdf                            | Docker / Backend Software Engineer     | 2026-03-17     |
