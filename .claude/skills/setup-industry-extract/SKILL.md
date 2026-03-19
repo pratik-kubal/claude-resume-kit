@@ -1,5 +1,8 @@
 ---
+name: setup-industry-extract
 description: Extract structured information from tailored resumes, PDFs, or code into knowledge base extractions
+user-invocable: true
+disable-model-invocation: true
 ---
 
 # /setup-extract

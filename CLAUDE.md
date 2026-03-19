@@ -140,9 +140,9 @@ For char counting: `\ce{TiO2}` → 4 rendered chars, `$\beta$` → 1 rendered ch
 
 _Update this section when starting/finishing a JD._
 
-| Session | Status | Next Command |
-|---------|--------|-------------|
-| (none active) | — | — |
+| Session  | Status       | Next Command                               |
+| -------- | ------------ | ------------------------------------------ |
+| Neon SWE | Resume: DONE | `/make-cl output/Neon/session_neon_swe.md` |
 
 ---
 
